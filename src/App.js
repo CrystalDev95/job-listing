@@ -12,7 +12,10 @@ function App() {
 
   return (
     <div className="App">
-          <h1 className="text-4xl">Learn React</h1>
+      <header>
+        <img src='/images/bg-header-desktop.svg' alt='bg-image' />
+      </header>
+          {/* <h1 className="text-4xl text-center my-6 font-bold">Job Listings</h1> */}
       {jobs.length === 0 ? (
           <p>Jobs are fetching...</p>
         ) : (
