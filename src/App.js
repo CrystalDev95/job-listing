@@ -1,8 +1,23 @@
+import React, { useState, useEffect } from 'react';
+import data from './assets/data.json'
+import JobBoardComponent from './components/JobBoardComponent';
 
 function App() {
+  const [jobs, setJobs] = useState([]); 
+
+
+  //updates the array
+  useEffect(() => setJobs(data), []);
+
+
   return (
     <div className="App">
-          <h1>Learn React</h1>
+          <h1 className="text-4xl">Learn React</h1>
+      {jobs.length === 0 ? (
+          <p>Jobs are fetching...</p>
+        ) : (
+          jobs.map((job) => <JobBoardComponent job={job} key={job.id} />)
+          )}
     </div>
   );
 }
